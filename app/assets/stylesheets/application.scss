@@ -31,6 +31,17 @@
    background: #F2F2F2;
    margin: 0;
   }
+  
+  .bottom_border {
+    position: absolute;
+    bottom: 9px;
+    background: #252222;
+    border-radius: 100px;
+    width: 134px;
+    height: 5px;
+    left: 121px;
+    display: inline-block;
+  }
 
  
  
@@ -39,10 +50,6 @@
  /*--- common ---*/
  
  /*--- user-authentication ---*/
- img {
-  min-width: 375px;
-  
- }
 
  .authentication_page {
    height: 514px;
