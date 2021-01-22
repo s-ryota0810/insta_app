@@ -299,6 +299,29 @@
     
   }
 }
+
+.user_info_counts {
+  margin-top: 38px;
+  padding-left: 59px;
+  padding-right: 43px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.element_counts {
+  text-align: center;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333A42;
+  p {
+    font-size: 14px;
+    line-height: 21px;
+    color: #9E9E9E;
+  }
+}
  
  
  

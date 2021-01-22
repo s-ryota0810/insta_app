@@ -5,4 +5,13 @@
     .profile_info_image
       = link_to edit_profile_path do
         = image_tag @profile.user.avatar_image
-        
+  .user_info_counts
+    .element_counts
+      = 45
+      %p Posts
+    .element_counts
+      = 110
+      %p Followers
+    .element_counts
+      = 77
+      %p Follwing
