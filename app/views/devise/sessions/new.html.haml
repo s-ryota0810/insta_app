@@ -1,0 +1,15 @@
+= image_tag 'Rectangle.png'
+.authentication_page
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .field_email
+      = f.label :email, class: 'field_email_label'
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: 'field_email_box'
+    .field_password
+      = f.label :password, class: 'field_password_label'
+      %br/
+      = f.password_field :password, autocomplete: "current-password", class: 'field_password_box'
+    .forgotpass
+      = link_to "Forgot password?", new_password_path(resource_name)
+    .actions
+      = f.submit "LOGIN", class: 'btn-sign'

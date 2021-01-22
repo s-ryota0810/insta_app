@@ -1,0 +1,215 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /*--- common ---*/
+
+ a {
+  text-decoration: none;
+ }
+ html {
+   position: relative;
+ }
+ 
+ body {
+   position: absolute;
+   top: 0;
+   left: 0;
+   min-width: 375px;
+   background: #F2F2F2;
+   margin: 0;
+  }
+
+ 
+ 
+ 
+ 
+ /*--- common ---*/
+ 
+ /*--- user-authentication ---*/
+ img {
+  min-width: 375px;
+  
+ }
+
+ .authentication_page {
+   height: 514px;
+   min-width: 343px;
+   position: relative;
+   margin: 0 0 15px 0;
+   padding: 0 16px 0;
+ }
+ 
+ .field_email{
+  margin-top: 20px;
+  width: 100%;
+  height: 55px;
+  position: relative;
+  border-bottom: 1px solid #9E9E9E;
+  
+  
+  
+  &_label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 31px;
+    height: 17px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 16px;
+    color: #979797;
+    mix-blend-mode: normal;
+    opacity: 0.9;
+  }
+  
+  &_box {
+    position: absolute;
+    top: 21px;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
+    mix-blend-mode: normal;
+    opacity: 0.9;
+    border: none;
+    margin-bottom: 10px;
+  }  
+ }
+ 
+ .field_password {
+   margin-top: 20px;
+   margin-bottom: 16px;
+   width: 100%;
+   height: 55px;
+   position: relative;
+   border-bottom: 1px solid #9E9E9E;
+   
+   &_label {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 54px;
+     height: 17px;
+     font-family: Poppins;
+     font-style: normal;
+     font-weight: 500;
+     font-size: 11px;
+     line-height: 16px;
+     color: #979797;
+     mix-blend-mode: normal;
+     opacity: 0.9;
+   }
+   &_box {
+    position: absolute;
+    top: 21px;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
+    mix-blend-mode: normal;
+    opacity: 0.9;
+    border: none;
+
+  }  
+
+ }
+ .forgotpass {
+   text-align: right;
+   font-family: Poppins;
+   font-style: normal;
+   color: #CCCCCC;
+   line-height: 16px;
+   font-size: 11px;
+   font-weight: normal;
+
+ }
+ 
+ 
+ .btn-sign {
+   width: 343px;
+   height: 48px;
+   background: #FFE600;
+   position: absolute;
+   top: 328px;
+   font-family: Poppins;
+   font-style: normal;
+   font-weight: 500;
+   font-size: 14px;
+   line-height: 21px;
+   text-align: center;
+   color: #000000;
+   mix-blend-mode: normal;
+   opacity: 0.9;
+   border: none;
+ }
+ 
+ .field_account {
+   margin-top: 20px;
+   height: 55px;
+   width: 100%;
+   position: relative;
+   border-bottom: 1px solid #9E9E9E;
+   
+   &_label {
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 17px;
+     font-family: Poppins;
+     font-style: normal;
+     font-weight: 500;
+     font-size: 11px;
+     line-height: 16px;
+     color: #979797;
+     mix-blend-mode: normal;
+     opacity: 0.9;
+   }
+   
+   &_box {
+     position: absolute;
+     height: 24px;
+     font-family: Poppins;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 16px;
+     line-height: 24px;
+     color: #333333;
+     mix-blend-mode: normal;
+     opacity: 0.9;
+     width: 100%;
+     height: 24px;
+     top: 21px;
+     left: 0;
+     border: none;
+   }
+ }
+
+ 
+
+ /*--- user-authentication ---*/
+ 
