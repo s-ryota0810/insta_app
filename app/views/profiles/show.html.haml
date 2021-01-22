@@ -3,4 +3,5 @@
     .profile_info_name
       = current_user.account
     .profile_info_image
-      = image_tag 'Ellipse.png'
+      = link_to edit_profile_path do
+        = image_tag 'Ellipse.png'
