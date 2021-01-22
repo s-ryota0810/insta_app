@@ -2,6 +2,10 @@
   .edit_profile_form
     = form_with(model: @profile, url: profile_path, local: true, method: 'put' ) do |f|
       %div
+        = f.label :avatar, 'アバター'
+      %div
+        = f.file_field :avatar
+      %div
         = f.label :gender, '性別', class: 'edit_profile_form_label'
       %div
         = f.select :gender, Profile.genders.keys, {}, { class: 'edit_profile_form_text' }
