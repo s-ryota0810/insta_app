@@ -19,6 +19,7 @@
  a {
   text-decoration: none;
  }
+ 
  html {
    position: relative;
  }
@@ -42,8 +43,39 @@
     left: 121px;
     display: inline-block;
   }
+  
+  header {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    a {
+      color: red;
 
- 
+    }
+
+  }
+  
+  .container {
+    padding: 0 16px 0;
+    position: relative;
+  }
+
+  .backicon-1 {
+    position: fixed;
+    z-index: 2;
+    top: 52px;
+    left: 16px;
+    width: 5px;
+    height: 12px;  
+  }
+  .backicon-2 {
+   position: fixed;
+   z-index: 2;
+   top: 57px;
+   left: 17px;
+   width: 16px;
+   height: 2px;  
+ }
  
  
  
@@ -219,4 +251,47 @@
  
 
  /*--- user-authentication ---*/
+ 
+ /*--- profile ---*/
+
+
+.profile_info {
+  width: 40%;
+  margin:  46px auto 0;
+  text-align: center;
+    
+  &_name {
+    width: 100%;
+    height: 24px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #333A42;
+    margin-bottom: 32px;
+  }
+  
+  &_image {
+    margin: 0 auto;
+    width: 90px;
+    height: 90px;
+    border: 1px solid #E91E63;
+    box-sizing: border-box;
+    border-radius: 50%;
+    padding: 2px;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+  
+}
+
+ 
+ 
+ 
+ /*--- profile ---*/
  
