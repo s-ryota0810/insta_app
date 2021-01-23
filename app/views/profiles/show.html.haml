@@ -2,8 +2,11 @@
   .profile_info
     .profile_info_name
       = current_user.account
-    .profile_info_image
-      = image_tag @profile.user.avatar_image
+    #profile_image
+      = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+        = image_tag current_user.avatar_image, class: 'profile_info_image'
+        = f.file_field :avatar, id:'uploader', style: 'display:none'
+        = f.submit 'upload', id:'submit', class:'hidden'
   .user_info_counts
     .element_counts
       = 45
@@ -14,3 +17,22 @@
     .element_counts
       = 77
       %p Follwing
+  .image_layouts
+    .image_layouts_upper
+      .image_layouts_upper_right
+        #sample_1
+          = image_tag 'sample_1.png'
+      .image_layouts_upper_left
+        #sample_2
+        = image_tag 'sample_2.png'
+        #sample_3
+        = image_tag 'sample_3.png'
+    .image_layouts_bottom
+      .image_layouts_bottom_right
+        #sample_3
+        = image_tag 'sample_4.png'
+        #sample_5
+        = image_tag 'sample_5.png'
+      .image_layouts_bottom_left
+        #sample_6
+        = image_tag 'sample_6.png'    

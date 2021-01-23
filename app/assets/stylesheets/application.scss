@@ -20,14 +20,10 @@
   text-decoration: none;
  }
  
- html {
-   position: relative;
- }
  
  body {
-   position: absolute;
-   top: 0;
-   left: 0;
+   position: relative;
+   min-height: 778px;
    min-width: 375px;
    background: #F2F2F2;
    margin: 0;
@@ -55,6 +51,14 @@
 
   }
   
+  footer {
+    position: absolute;
+    width: 100%;
+    height: 34px;
+    bottom: 0;
+    
+  }
+  
   .container {
     padding: 0 16px 0;
     position: relative;
@@ -77,6 +81,9 @@
    height: 2px;  
  }
  
+ .hidden {
+   display: none;
+ }
  
  
  /*--- common ---*/
@@ -321,6 +328,66 @@
     line-height: 21px;
     color: #9E9E9E;
   }
+}
+
+.image_layouts {
+  width: 100%;
+  height: 392px;
+  margin-top: 42px;
+  
+  &_upper {
+    width: 100%;
+    height: 192px;
+    margin-bottom: 4px;
+    position: relative;
+    justify-content: space-around;
+    
+    &_right {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 207px;
+    }
+    
+    &_left {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 128px;
+    }
+  }
+  
+  &_bottom {
+    width: 100%;
+    height: 192px;
+    margin-top: 4px;
+    position: relative;
+    justify-content: space-around;
+    
+    &_right {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 128px;
+    }
+    
+    &_left {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 207px;
+    }
+  }
+}
+
+.selected{
+  opacity: 0.8;
+}
+
+.upload {
+  margin-top: 10px;
+  padding: 10px;
+  margin: 0 auto;
 }
  
  

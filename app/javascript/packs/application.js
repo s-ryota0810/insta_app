@@ -16,7 +16,15 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+import $ from 'jquery'
+import axios from 'axios'
 
 document.addEventListener('DOMContentLoaded', () => {
-    window.alert('クリックされた')
+  $('.profile_info_image').on('click', function(){
+    $('#uploader').click()
+  })
+  $('#uploader').change(function() {
+    $('#submit').click()
+  })
 })
+
