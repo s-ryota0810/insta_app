@@ -11,4 +11,17 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %header
+      - if user_signed_in?
+        = link_to 'PROFILE', profile_path
+        = link_to 'LOGOUT', destroy_user_session_path, data: { method: 'delete'}
+      - else
+        = link_to 'SIGNUP', new_user_registration_path
+        = link_to 'SIGNIN', new_user_session_path
+      - unless current_page?(root_path)
+        = link_to :back do
+          = image_tag 'Path 4.png', class: 'backicon-1'
+          = image_tag 'Path 5.png', class: 'backicon-2'
     = yield
+    %footer
+      = image_tag 'Rectangle_border.png', class: 'bottom_border'
