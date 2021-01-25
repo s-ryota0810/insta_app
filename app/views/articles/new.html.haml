@@ -1,0 +1,17 @@
+.container
+  = form_with(model: @article, method: 'post', local: true) do |f|
+    %div.post-header
+      = link_to :back do
+        %p Cancel
+      %p Status
+      = f.submit 'Post', class:'btn-article-post'
+    %div.post_user
+      .post_user_image
+        = image_tag current_user.avatar_image
+      .post_user_name
+        = @article.user.account
+    %div
+      = f.text_field :content
+    %div
+      = f.label :images, '+ Album', class:'image-push-btn'
+      = f.file_field :images, multiple: true, class: 'image-push-field'

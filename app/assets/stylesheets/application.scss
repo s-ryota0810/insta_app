@@ -40,10 +40,11 @@
     display: inline-block;
   }
   
-  header {
-    position: fixed;
-    z-index: 2;
-    top: 0;
+  .header {
+    position: relative;
+    height: 44px;
+    width: 100%;
+    
     a {
       color: red;
 
@@ -79,6 +80,20 @@
    left: 17px;
    width: 16px;
    height: 2px;  
+ }
+ 
+ .camera-1 {
+   position: fixed;
+   z-index: 2;
+   top: 53px;
+   left: 21px;
+ }
+ 
+ .camera-2 {
+   position: fixed;
+   z-index: 2;
+   top: 48.83px;
+   left: 16px;
  }
  
  .hidden {
@@ -392,5 +407,38 @@
  
  
  
- /*--- profile ---*/
- 
+/*--- profile ---*/
+/*--- articles ---*/
+
+.image-push-btn {
+  
+}
+
+.image-push-field {
+  display: none;
+}
+
+
+/*--- articles ---*/
+
+.post-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  p {
+    line-height: 5px;
+  }
+}
+
+
+
+.post_user {
+  margin-top: 40px;
+  display: flex;
+  
+  &_image {
+    border-radius: 50%;
+  }
+
+}

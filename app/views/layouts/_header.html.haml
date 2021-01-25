@@ -1,0 +1,18 @@
+- if current_page?(new_user_session_path) || current_page?(new_user_registration_path)
+  .header_none
+    = image_tag '9_41.png', class: 'head-time'
+    %li.fas.fa-wifi
+    
+- else
+  .header
+    = image_tag '9_41.png'
+  
+- if current_page?(root_path)
+  = link_to new_article_path do
+    = image_tag 'Vector1.png', class: 'camera-1'
+    = image_tag 'Vector2.png', class: 'camera-2'
+- elsif current_page?(new_article_path)
+- else  
+  = link_to :back do
+    = image_tag 'Path 4.png', class: 'backicon-1'
+    = image_tag 'Path 5.png', class: 'backicon-2'
