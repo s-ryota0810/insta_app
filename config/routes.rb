@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   root to: 'articles#index'
   resource :profile
-  resources :articles
+  resources :articles do
+    resources :images
+  end
 end

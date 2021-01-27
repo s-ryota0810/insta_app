@@ -410,6 +410,39 @@
 /*--- profile ---*/
 /*--- articles ---*/
 
+.article_author {
+  width: 110px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 11px;
+}
+
+
+.article_user_icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.article_user_info_name {
+  width: 64px;
+  height: 23px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #333333;
+}
+
+.article_user_info_created_at {
+  font-size: 12px;
+  width: 72px;
+  height: 20px;
+  line-height: 18px;
+  color: #9E9E9E;
+  
+}
+
 .image-push-btn {
   
 }
@@ -419,26 +452,18 @@
 }
 
 
+
 /*--- articles ---*/
 
-.post-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  height: 40px;
-  p {
-    line-height: 5px;
-  }
+.article_images_scope {
+  width: 343px;
+  height: 225px;
+}
+
+.article_image_size {
+  max-width: 198px;
+  max-height: 225px;
+  object-fit: scale-down;
 }
 
 
-
-.post_user {
-  margin-top: 40px;
-  display: flex;
-  
-  &_image {
-    border-radius: 50%;
-  }
-
-}

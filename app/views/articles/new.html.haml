@@ -1,6 +1,6 @@
 .container
   = form_with(model: @article, method: 'post', local: true) do |f|
-    %div.post-header
+    .post-header
       = link_to :back do
         %p Cancel
       %p Status
