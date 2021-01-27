@@ -16,9 +16,10 @@
       = link_to 'https://twitter.com/share?url=#{request.url}' do
         = image_tag 'btn-share.png', class: 'btn-share'
     .article_like_status
-      - if @article.likes.find_by(user_id: current_user.id)
+      - if @article.has_liked?(current_user)
         = link_to article_likes_path(@article), data: { method: 'delete' } do
           = image_tag 'liked.png'
       - else
         = link_to article_likes_path(@article), data: { method: 'post' } do
           = image_tag 'non-liked.png'
+      = @article.likes.count  
