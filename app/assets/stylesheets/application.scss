@@ -40,10 +40,11 @@
     display: inline-block;
   }
   
-  header {
-    position: fixed;
-    z-index: 2;
-    top: 0;
+  .header {
+    position: relative;
+    height: 44px;
+    width: 100%;
+    
     a {
       color: red;
 
@@ -79,6 +80,20 @@
    left: 17px;
    width: 16px;
    height: 2px;  
+ }
+ 
+ .camera-1 {
+   position: fixed;
+   z-index: 2;
+   top: 53px;
+   left: 21px;
+ }
+ 
+ .camera-2 {
+   position: fixed;
+   z-index: 2;
+   top: 48.83px;
+   left: 16px;
  }
  
  .hidden {
@@ -392,5 +407,63 @@
  
  
  
- /*--- profile ---*/
- 
+/*--- profile ---*/
+/*--- articles ---*/
+
+.article_author {
+  width: 110px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 11px;
+}
+
+
+.article_user_icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.article_user_info_name {
+  width: 64px;
+  height: 23px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #333333;
+}
+
+.article_user_info_created_at {
+  font-size: 12px;
+  width: 72px;
+  height: 20px;
+  line-height: 18px;
+  color: #9E9E9E;
+  
+}
+
+.image-push-btn {
+  
+}
+
+.image-push-field {
+  display: none;
+}
+
+
+
+/*--- articles ---*/
+
+.article_images_scope {
+  width: 343px;
+  height: 225px;
+}
+
+.article_image_size {
+  max-width: 198px;
+  max-height: 225px;
+  object-fit: scale-down;
+}
+
+
