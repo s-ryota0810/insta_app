@@ -19,4 +19,8 @@ class User < ApplicationRecord
       'Ellipse.png'
     end
   end
+  
+  def has_liked?(article)
+    likes.find_by(article_id: article.id)
+  end
 end

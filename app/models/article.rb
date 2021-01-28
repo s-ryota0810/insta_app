@@ -4,9 +4,7 @@ class Article < ApplicationRecord
   has_many :likes, dependent: :destroy
 
 
-  def has_liked?(user)
-    likes.find_by(user_id: user.id).present?
-  end
+
 
 
 
