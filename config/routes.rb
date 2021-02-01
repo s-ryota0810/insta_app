@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :articles do
     resources :images
     resource :likes 
+    resources :comments
   end
 end

@@ -30,6 +30,7 @@ document.addEventListener('turbolinks:load', () => {
     $('#submit').click()
   })
   
+  
   const dataset = $('#article-show').data()
   const articleId = dataset.articleId
   const likeCountCalculation = (likeCount) => {
@@ -37,6 +38,51 @@ document.addEventListener('turbolinks:load', () => {
       `${likeCount}`
     )
   }
+
+  $('.comment_btn').on('click', function(){
+    $('.comment_btn').addClass('hidden')
+    $('.comment_form').removeClass('hidden')
+    $('.comment-text-area').removeClass('hidden')
+    $('.btn-comment-push').removeClass('hidden')
+  })
+  
+  const appendNewComment = (comment) => {
+    $('.comments_container').append(
+      `<div class="comment_area">
+      <div class="comment_area_item">
+      <div class="comment_area_user_name"><p>${comment.user.account}</p></div>
+      <div class="comment_area_content"><p>${comment.content}</p></div>
+      </div>
+      </div>`
+    )
+  }
+  
+  $('.add-comment-btn').on('click', function(){
+    const content = $('#comment_content').val()
+    if (!content) {
+      window.alert('コメントを入力してください')
+    } else {
+      axios.post(`/articles/${articleId}/comments`, {
+        comment: {content: content}
+      })
+        .then((res) => {
+          const comment = res.data
+          appendNewComment(comment)
+          $('#comment_content').val('')
+            
+        })
+    }
+  })
+
+  axios.get(`/articles/${articleId}/comments`)
+    .then((response) => {
+      const comments = response.data
+      comments.forEach((comment) => {
+        appendNewComment(comment)
+      })
+    })
+    
+
   
   
   axios.get(`/articles/${articleId}/likes`)
@@ -81,5 +127,8 @@ document.addEventListener('turbolinks:load', () => {
         window.alert('Error')
       })
   })
+  
+
+  
 })
 
