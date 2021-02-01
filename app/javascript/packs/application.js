@@ -81,5 +81,12 @@ document.addEventListener('turbolinks:load', () => {
         window.alert('Error')
       })
   })
+  
+  
+  axios.post(`/articles/${articleId}/comments`)
+    const commentContent = response.data.content
+    .then((response) => {
+      
+    })
 })
 
