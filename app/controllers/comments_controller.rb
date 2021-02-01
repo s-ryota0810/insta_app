@@ -22,8 +22,6 @@ class CommentsController < ApplicationController
     render json: @comment
   end  
   
-  
-  
   def comment_reply
     users = User.all
     users.each do |user|
@@ -31,13 +29,15 @@ class CommentsController < ApplicationController
       @from_name = @comment.user.account
       if @comment.content.include?("@#{@to_name}")
         @content = @comment.content.gsub(/\@#{@to_name}/,"#{@to_name}")
-        MentionMailer.mention_to(user, @from_name, @content).deliver_later
+        MentionMailer.mention_to(user, @from_name, @content).deliver_now
         @comment.save!
       else
         @comment.save!
       end
     end
   end
+
+  
   private
   
   def comments_params
