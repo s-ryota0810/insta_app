@@ -1,0 +1,24 @@
+.container#article-show{data: {article_id: @article.id}}
+  .article_field
+    .article_author
+      = image_tag @article.user.avatar_image, class: 'article_user_icon'
+      .article_user_info
+        .article_user_info_name
+          = @article.user.account
+        .article_user_info_created_at
+          = @article.created_at
+    .article_images_scope
+      - if @article.images.attached?
+        - @article.images.each do |image|
+          .article_image_size
+            = image_tag image
+    .sharing_twitter
+      = link_to 'https://twitter.com/share?url=#{request.url}' do
+        = image_tag 'btn-share.png', class: 'btn-share'
+    .article_like_status
+      .article-heart.hidden.active-heart-logo
+        = image_tag 'liked.png'
+      .article-heart.hidden.inactive-heart-logo
+        = image_tag 'non-liked.png'
+      .article-heart-count
+        %span

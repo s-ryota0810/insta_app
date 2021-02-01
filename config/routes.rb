@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resource :profile
   resources :articles do
     resources :images
+    resource :likes 
   end
 end

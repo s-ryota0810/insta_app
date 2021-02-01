@@ -1,20 +1,17 @@
 .container
   - if @articles.present?
     - @articles.each do |article|
-      .article_field
-        .article_author
-          = image_tag article.user.avatar_image, class: 'article_user_icon'
-          .article_user_info
-            .article_user_info_name
-              = article.user.account
-            .article_user_info_created_at
-              = article.created_at
-        .article_images_scope
-          - if article.images.attached?
-            - article.images.each do |image|
-              .article_image_size
-                = image_tag image
-        .sharing_twitter
-          = link_to 'https://twitter.com/share?url=#{request.url}/article' do
-            = image_tag 'btn-share.png', class: 'btn-share'
-
+      = link_to article_path(article) do
+        .article_field
+          .article_author
+            = image_tag article.user.avatar_image, class: 'article_user_icon'
+            .article_user_info
+              .article_user_info_name
+                = article.user.account
+              .article_user_info_created_at
+                = article.created_at
+          .article_images_scope
+            - if article.images.attached?
+              - article.images.each do |image|
+                .article_image_size
+                  = image_tag image
