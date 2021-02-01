@@ -46,6 +46,17 @@ document.addEventListener('turbolinks:load', () => {
     $('.btn-comment-push').removeClass('hidden')
   })
   
+  const appendNewComment = (comment) => {
+    $('.comments_container').append(
+      `<div class="comment_area">
+      <div class="comment_area_item">
+      <div class="comment_area_user_name"><p>${comment.user.account}</p></div>
+      <div class="comment_area_content"><p>${comment.content}</p></div>
+      </div>
+      </div>`
+    )
+  }
+  
   $('.add-comment-btn').on('click', function(){
     const content = $('#comment_content').val()
     if (!content) {
@@ -56,14 +67,7 @@ document.addEventListener('turbolinks:load', () => {
       })
         .then((res) => {
           const comment = res.data
-          $('.comments_container').append(
-            `<div class="comment_area">
-            <div class="comment_area_item">
-            <div class="comment_area_user_name"><p>${comment.user.account}</p></div>
-            <div class="comment_area_content"><p>${comment.content}</p></div>
-            </div>
-            </div>`
-          )
+          appendNewComment(comment)
           $('#comment_content').val('')
             
         })
@@ -74,14 +78,7 @@ document.addEventListener('turbolinks:load', () => {
     .then((response) => {
       const comments = response.data
       comments.forEach((comment) => {
-        $('.comments_container').append(
-          `<div class="comment_area">
-          <div class="comment_area_item">
-          <div class="comment_area_user_name"><p>${comment.user.account}</p></div>
-          <div class="comment_area_content"><p>${comment.content}</p></div>
-          </div>
-          </div>`
-        )
+        appendNewComment(comment)
       })
     })
     
