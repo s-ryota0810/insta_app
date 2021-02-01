@@ -1,0 +1,12 @@
+.container
+  - @comment.errors.full_messages.each do |error|
+    %ul
+      %li= error
+  = form_with(url:article_comments_path, model: @comment, method: 'post', local: true ) do |f|
+    %div
+      = f.label :content
+    %div
+      = f.text_field :content
+    %div
+      = f.submit
+    

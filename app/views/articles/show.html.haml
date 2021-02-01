@@ -12,13 +12,17 @@
         - @article.images.each do |image|
           .article_image_size
             = image_tag image
-    .sharing_twitter
-      = link_to 'https://twitter.com/share?url=#{request.url}' do
-        = image_tag 'btn-share.png', class: 'btn-share'
-    .article_like_status
-      .article-heart.hidden.active-heart-logo
-        = image_tag 'liked.png'
-      .article-heart.hidden.inactive-heart-logo
-        = image_tag 'non-liked.png'
-      .article-heart-count
-        %span
+    .article_option
+      .article_like_status
+        .article-heart.hidden.active-heart-logo
+          = image_tag 'liked.png'
+        .article-heart.hidden.inactive-heart-logo
+          = image_tag 'non-liked.png'
+        .article-heart-count
+          %span
+      .article_comments
+        = link_to article_comments_path(@article) do
+          = image_tag 'btn-comments.png'
+      .sharing_twitter
+        = link_to 'https://twitter.com/share?url=#{request.url}' do
+          = image_tag 'btn-share.png', class: 'btn-share'
