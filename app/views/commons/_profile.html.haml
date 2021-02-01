@@ -9,7 +9,12 @@
           = f.file_field :avatar, id:'uploader', style: 'display:none'
           = f.submit 'upload', id:'submit', class:'hidden'
       - else
-        = image_tag user.avatar_image, class: 'profile_info_image'
+        %div
+          = image_tag user.avatar_image, class: 'profile_info_image'
+        - if current_user.follow?(user)
+          = link_to 'Unfollow', account_follow_path(user), data: {method: 'delete'}, class: 'follow-btn'
+        - else
+          = link_to 'Follow', account_follows_path(user), data: {method: 'post'}, class: 'follow-btn'
   .user_info_counts
     .element_counts
       = 45
