@@ -44,7 +44,12 @@ class User < ApplicationRecord
   end
   
   def follow?(user)
-    following_relationships.find_by(following_id: user.id)
+    if user.is_a?(User)
+      user_id = user.id
+    else
+      user_id = user
+    end
+    following_relationships.exists?(following_id: user_id)
   end
   
   def has_liked?(article)

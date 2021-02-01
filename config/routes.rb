@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :accounts, only: [:show, :edit, :update] do
-    resources :follows, only: [:create, :destroy]
+    resource :follows, only: [:create, :destroy, :show]
   end
   root to: 'articles#index'
   resource :profile
