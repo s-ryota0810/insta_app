@@ -30,7 +30,7 @@ class User < ApplicationRecord
   end
   
   def unfollow!(user)
-    following_relationships.find_by(following_id: user.id).destroy
+    following_relationships.find_by(following_id: user.id).destroy!
   end
   
   def has_liked?(article)
