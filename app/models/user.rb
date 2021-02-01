@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :articles, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :following_relationships, foreign_key: 'follower_id', class_name: 'Relationship', dependent: :destroy
+  has_many :followings, through: :following_relationships, source: :following
   
   def prepare_profile
     profile || build_profile
@@ -19,6 +21,14 @@ class User < ApplicationRecord
     else
       'Ellipse.png'
     end
+  end
+  
+  def follow!(user)
+    following_relationships.create!(following_id: user.id)
+  end
+  
+  def unfollow!(user)
+    following_relationships.find_by(following_id: user.id).destroy
   end
   
   def has_liked?(article)
