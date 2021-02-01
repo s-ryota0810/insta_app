@@ -18,13 +18,68 @@ require("channels")
 
 import $ from 'jquery'
 import axios from 'axios'
+import { csrfToken } from 'rails-ujs'
 
-document.addEventListener('DOMContentLoaded', () => {
+axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
+
+document.addEventListener('turbolinks:load', () => {
   $('.profile_info_image').on('click', function(){
     $('#uploader').click()
   })
   $('#uploader').change(function() {
     $('#submit').click()
+  })
+  
+  const dataset = $('#article-show').data()
+  const articleId = dataset.articleId
+  const likeCountCalculation = (likeCount) => {
+    $('.article-heart-count > span').append(
+      `${likeCount}`
+    )
+  }
+  
+  
+  axios.get(`/articles/${articleId}/likes`)
+    .then((response) => {
+      const hasLiked = response.data.hasLiked
+      const likeCount = response.data.likeCount
+      if (hasLiked) {
+        $('.active-heart-logo').removeClass('hidden')
+      } else {
+        $('.inactive-heart-logo').removeClass('hidden')
+      }
+      likeCountCalculation(likeCount)
+    })
+    
+  $('.inactive-heart-logo').on('click', () => {
+    axios.post(`/articles/${articleId}/likes`)
+      .then((response) =>{
+        if (response.data.status === 'ok') {
+          $('.active-heart-logo').removeClass('hidden')
+          $('.inactive-heart-logo').addClass('hidden')
+        }
+        const likeCount = response.data.likeCount
+        $('.article-heart-count > span').html('')
+        likeCountCalculation(likeCount)
+      })
+      .catch((e) => {
+        window.alert('Error')
+      })
+  })
+  $('.active-heart-logo').on('click', () => {
+    axios.delete(`/articles/${articleId}/likes`)
+      .then((response) =>{
+        if (response.data.status === 'ok') {
+          $('.inactive-heart-logo').removeClass('hidden')
+          $('.active-heart-logo').addClass('hidden')
+        }
+        const likeCount = response.data.likeCount
+        $('.article-heart-count > span').html('')
+        likeCountCalculation(likeCount)
+      })
+      .catch((e) => {
+        window.alert('Error')
+      })
   })
 })
 

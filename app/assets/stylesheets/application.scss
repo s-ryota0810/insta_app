@@ -466,4 +466,25 @@
   object-fit: scale-down;
 }
 
+.article_like_status {
+  position: relative;
+}
+
+.article-heart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+}
+
+.article-heart-count {
+  position: absolute;
+
+  top: 0;
+  left: 20px;
+  span {
+    font-weight: bold;
+  }
+}
+
 

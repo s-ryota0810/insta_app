@@ -1,4 +1,4 @@
-.container
+.container#article-show{data: {article_id: @article.id}}
   .article_field
     .article_author
       = image_tag @article.user.avatar_image, class: 'article_user_icon'
@@ -16,10 +16,9 @@
       = link_to 'https://twitter.com/share?url=#{request.url}' do
         = image_tag 'btn-share.png', class: 'btn-share'
     .article_like_status
-      - if current_user.has_liked?(@article)
-        = link_to article_likes_path(@article), data: { method: 'delete' } do
-          = image_tag 'liked.png'
-      - else
-        = link_to article_likes_path(@article), data: { method: 'post' } do
-          = image_tag 'non-liked.png'
-      = @article.likes.count  
+      .article-heart.hidden.active-heart-logo
+        = image_tag 'liked.png'
+      .article-heart.hidden.inactive-heart-logo
+        = image_tag 'non-liked.png'
+      .article-heart-count
+        %span
