@@ -20,7 +20,8 @@
       %p Posts
     .element_counts
       = 110
-      %p Followers
+      = link_to account_followers_path(user.id) do
+        %p Followers
     .element_counts
       = 77
       = link_to account_followings_path(user.id) do
