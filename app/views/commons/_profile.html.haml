@@ -23,7 +23,8 @@
       %p Followers
     .element_counts
       = 77
-      %p Follwing
+      = link_to account_followings_path(user.id) do
+        %p Follwing
   .image_layouts
     .image_layouts_upper
       #sample_1
