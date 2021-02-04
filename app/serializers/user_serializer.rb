@@ -1,4 +1,6 @@
 class UserSerializer < ActiveModel::Serializer
+  
   attributes :account, :avatar_image
-  has_one :profile
+  has_many :comments
+  
 end

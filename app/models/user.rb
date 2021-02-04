@@ -18,7 +18,7 @@ class User < ApplicationRecord
   end
   
   def avatar_image
-    if profile&.avatar&.attached?
+    if self.profile&.avatar&.attached?
       profile.avatar
     else
       'Ellipse.png'

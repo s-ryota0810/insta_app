@@ -16,14 +16,14 @@
             %p.follow-btn.hidden Follow
   .user_info_counts
     .element_counts
-      = 45
+      = user.articles.count
       %p Posts
     .element_counts
-      = 110
+      = user.followers.count
       = link_to account_followers_path(user.id) do
         %p Followers
     .element_counts
-      = 77
+      = user.followings.count
       = link_to account_followings_path(user.id) do
         %p Follwing
   .image_layouts

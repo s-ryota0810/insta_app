@@ -1,13 +1,14 @@
 .container#article-show{data: {article_id: @article.id}}
   .article_field
     .article_author
-      = link_to account_path(@article.user) do
-        = image_tag @article.user.avatar_image, class: 'article_user_icon'
-        .article_user_info
-          .article_user_info_name
-            = @article.user.account
-          .article_user_info_created_at
-            = @article.created_at
+      .article_user_icon
+        = link_to account_path(@article.user) do
+          = image_tag @article.user.avatar_image
+      .article_user_info
+        .article_user_info_name
+          = @article.user.account
+        .article_user_info_created_at
+          = @article.created_at
     .article_images_scope
       - if @article.images.attached?
         - @article.images.each do |image|
