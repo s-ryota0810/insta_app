@@ -23,6 +23,12 @@ import { csrfToken } from 'rails-ujs'
 axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 
 document.addEventListener('turbolinks:load', () => {
+  $('.profile_info_image').on('click', function(){
+    $('#uploader').click()
+  })
+  $('#uploader').change(function() {
+    $('#submit').click()
+  })
   const dataset = $('#article-show').data()
   const articleId = dataset.articleId
 
@@ -120,13 +126,8 @@ document.addEventListener('turbolinks:load', () => {
         })
     })
 
-  $('.profile_info_image').on('click', function(){
-    $('#uploader').click()
-  })
-  $('#uploader').change(function() {
-    $('#submit').click()
-  })
-  
+
+    
   const accountDataset = $('#account-show').data()
   const accountId = accountDataset.accountId
 
