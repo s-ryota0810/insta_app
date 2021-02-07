@@ -27,6 +27,7 @@ gem 'binding_of_caller'
 gem 'devise'
 gem 'hamlit'
 gem 'active_model_serializers'
+gem 'aws-sdk-s3', require: false
 
 
 # Use Active Storage variant
