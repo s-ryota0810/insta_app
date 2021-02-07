@@ -29,6 +29,7 @@ document.addEventListener('turbolinks:load', () => {
   $('#uploader').change(function() {
     $('#submit').click()
   })
+  
   const dataset = $('#article-show').data()
   const articleId = dataset.articleId
 
@@ -129,6 +130,11 @@ document.addEventListener('turbolinks:load', () => {
 
 
     
+  
+})
+
+document.addEventListener('turbolinks:load', () => {
+  
   const accountDataset = $('#account-show').data()
   const accountId = accountDataset.accountId
 
@@ -161,6 +167,6 @@ document.addEventListener('turbolinks:load', () => {
         }
       })
   })
-  
+
 })
 
