@@ -52,8 +52,10 @@ document.addEventListener('turbolinks:load', () => {
     $('.comments_container').append(
       `<div class="comment_area">
       <div class="comment_area_image"><img src="${comment.user.avatar_image}"></div>
+      <div class="comment_area_item">
       <div class="comment_area_user_name"><p>${comment.user.account}</p></div>
       <div class="comment_area_content"><p>${comment.content}</p></div>
+      </div>
       </div>`
     )
   }
