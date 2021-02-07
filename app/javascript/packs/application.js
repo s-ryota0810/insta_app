@@ -23,6 +23,13 @@ import { csrfToken } from 'rails-ujs'
 axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 
 document.addEventListener('turbolinks:load', () => {
+  $('.profile_info_image').on('click', function(){
+    $('#uploader').click()
+  })
+  $('#uploader').change(function() {
+    $('#submit').click()
+  })
+  
   const dataset = $('#article-show').data()
   const articleId = dataset.articleId
 
@@ -45,10 +52,11 @@ document.addEventListener('turbolinks:load', () => {
   const appendNewComment = (comment) => {
     $('.comments_container').append(
       `<div class="comment_area">
-      <div class="comment_area_image"><p>${comment.user.avatar_image}</p></div>
-      <div class="comment_area_user_name"><p>${comment.user.account}</p></div>
+      <div class="comment_area_image"><img src="${comment.user.avatar_image}"></div>
+      <div class="comment_area_item">
       <div class="comment_area_user_name"><p>${comment.user.account}</p></div>
       <div class="comment_area_content"><p>${comment.content}</p></div>
+      </div>
       </div>`
     )
   }
@@ -120,12 +128,12 @@ document.addEventListener('turbolinks:load', () => {
         })
     })
 
-  $('.profile_info_image').on('click', function(){
-    $('#uploader').click()
-  })
-  $('#uploader').change(function() {
-    $('#submit').click()
-  })
+
+    
+  
+})
+
+document.addEventListener('turbolinks:load', () => {
   
   const accountDataset = $('#account-show').data()
   const accountId = accountDataset.accountId
@@ -159,6 +167,6 @@ document.addEventListener('turbolinks:load', () => {
         }
       })
   })
-  
+
 })
 
