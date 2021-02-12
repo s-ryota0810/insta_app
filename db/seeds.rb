@@ -7,5 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-john = User.create!(account: 'John', email: 'john@gmail.com', password: 'password')
-yukina = User.create!(account: 'Yukina', email: 'yukina@gmail.com', password: 'password')
+users = User.all
+
+users.each do |user|
+  5.times do
+    article = user.articles.build(content: Faker::Lorem.sentence(word_count: 5))
+    article.save!
+  end
+end
