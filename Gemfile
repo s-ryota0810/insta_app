@@ -27,6 +27,8 @@ gem 'binding_of_caller'
 gem 'devise'
 gem 'hamlit'
 gem 'active_model_serializers'
+gem 'aws-sdk-s3', require: false
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -39,6 +41,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-byebug'
   gem 'rubocop-rails'
+  gem 'dotenv-rails'
+  gem 'faker'
 end
 
 group :development do
