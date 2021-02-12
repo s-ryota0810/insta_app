@@ -1,19 +1,20 @@
-= image_tag 'Rectangle.png', class: 'rectangle'
-.authentication_page
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = render "devise/shared/error_messages", resource: resource
-    .field_account
-      = f.label :account, class: 'field_account_label'
-      %br/
-      = f.text_field :account, class: 'field_account_box'
-    .field_email
-      = f.label :email, class: 'field_email_label'
-      %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email", class: 'field_email_box'
-    .field_password
-      = f.label :password, class: 'field_password_label'
-      %br/
-      = f.password_field :password, autocomplete: "new-password", class: 'field_password_box'
-      %br/
-    .actions
-      = f.submit "CREATE ACCOUNT", class: 'btn-sign'
+.authentication_image
+.container
+  .authentication
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .authentication_field
+        = f.label :account, class: 'label_field'
+        %br/
+        = f.text_field :account, class: 'text_field'
+      .authentication_field
+        = f.label :email, class: 'label_field'
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'text_field'
+      .authentication_field
+        = f.label :password, class: 'label_field'
+        %br/
+        = f.password_field :password, autocomplete: "new-password", class: 'text_field'
+        %br/
+      .authentication_submit
+        = f.submit "CREATE ACCOUNT", class: 'btn-primary'

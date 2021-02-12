@@ -1,15 +1,16 @@
-= image_tag 'Rectangle.png'
-.authentication_page
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .field_email
-      = f.label :email, class: 'field_email_label'
-      %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email", class: 'field_email_box'
-    .field_password
-      = f.label :password, class: 'field_password_label'
-      %br/
-      = f.password_field :password, autocomplete: "current-password", class: 'field_password_box'
-    .forgotpass
-      = link_to "Forgot password?", new_password_path(resource_name)
-    .actions
-      = f.submit "LOGIN", class: 'btn-sign'
+.authentication_image
+.container
+  .authentication
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .authentication_field
+        = f.label :email, class: 'label_field'
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'text_field'
+      .authentication_field
+        = f.label :password, class: 'label_field'
+        %br/
+        = f.password_field :password, autocomplete: "current-password", class: 'text_field'
+      .authentication_notice
+        = link_to "Forgot password?", new_password_path(resource_name), class: 'authentication_notice_text'
+      .authentication_submit
+        = f.submit "LOGIN", class: 'btn-primary'
