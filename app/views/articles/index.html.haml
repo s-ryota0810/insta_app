@@ -8,12 +8,16 @@
         .article_option
           .icon_content
             .icon_heart
-              - if current_user.has_liked?(article)
-                .active-heart-logo
-                  = image_tag 'liked.png'
+              - if user_signed_in?
+                - if current_user.has_liked?(article)
+                  .active-heart-logo
+                    = image_tag 'liked.png'
+                - else
+                  .inactive-heart-logo
+                    = image_tag 'non-liked.png'
               - else
                 .inactive-heart-logo
-                  = image_tag 'non-liked.png'
+                  = image_tag 'non-liked.png'             
           .icon_content_else
             = image_tag 'btn-share.png'
           .icon_content_else.comment_btn
