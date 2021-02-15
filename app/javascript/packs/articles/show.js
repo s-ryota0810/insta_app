@@ -14,7 +14,7 @@ const likeCountCalculation = (likeCount) => {
 }
 
 const appendNewComment = (comment) => {
-  $('.comments_container').append(
+  $('.comments_container').prepend(
     `<div class="comment_area">
     <div class="comment_area_image"><img src="${comment.user.avatar_image}"></div>
     <div class="comment_area_item">

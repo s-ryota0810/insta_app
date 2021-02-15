@@ -1,17 +1,22 @@
+= render 'articles/header'
 .container
   - if @articles.present?
     - @articles.each do |article|
-      = link_to article_path(article) do
-        .article_field
-          .article_author
-            = image_tag article.user.avatar_image, class: 'article_user_icon'
-            .article_user_info
-              .article_user_info_name
-                = article.user.account
-              .article_user_info_created_at
-                = article.created_at
-          .article_images_scope
-            - if article.images.attached?
-              - article.images.each do |image|
-                .article_image_size
-                  = image_tag image
+      .article_container_field
+        = link_to article_path(article) do
+          = render 'commons/article', article: article
+        .article_option
+          .icon_content
+            .icon_heart
+              - if current_user.has_liked?(article)
+                .active-heart-logo
+                  = image_tag 'liked.png'
+              - else
+                .inactive-heart-logo
+                  = image_tag 'non-liked.png'
+          .icon_content_else
+            = image_tag 'btn-share.png'
+          .icon_content_else.comment_btn
+            = image_tag 'btn-comments.png'
+        .article_content
+          = article.content

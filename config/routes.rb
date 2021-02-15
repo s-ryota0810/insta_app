@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :followings, only: [:index]
     resources :followers, only: [:index]
   end
-  root to: 'timelines#show'
+  root to: 'articles#index'
   resource :profile
   resources :articles do
     resources :images
