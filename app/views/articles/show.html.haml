@@ -5,12 +5,13 @@
     .article_option
       .icon_content
         .icon_heart
-          .active-heart-logo.hidden
-            = image_tag 'liked.png'
-          .inactive-heart-logo.hidden
-            = image_tag 'non-liked.png'
-          .article-heart-count
-            %span
+          - if user_signed_in?
+            .active-heart-logo.hidden
+              = image_tag 'liked.png'
+            .inactive-heart-logo.hidden
+              = image_tag 'non-liked.png'
+            .article-heart-count
+              %span
       .icon_content_else
         = image_tag 'btn-share.png'
       .icon_content_else.comment_btn
