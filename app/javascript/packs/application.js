@@ -29,12 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   $('#uploader').change(function() {
     $('#submit').click()
   })
-  
 
-
-
-    
-  
 })
 
 

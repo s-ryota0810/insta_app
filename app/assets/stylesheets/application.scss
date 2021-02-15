@@ -1,6 +1,8 @@
 @import 'header';
 @import 'user';
 @import 'button';
+@import 'article';
+@import 'comment';
 
 body, input {
   font-family: Poppins;
@@ -17,4 +19,14 @@ a {
 
 .container {
   padding: 0 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  position: fixed;
+  bottom: 10%;
+  right: 16px;
 }

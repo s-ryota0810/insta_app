@@ -1,21 +1,23 @@
 .container
   = form_with(model: @article, method: 'post', local: true) do |f|
-    .post-header
-      .post-header-left
-        = link_to :back do
-          Cancel
-      .post-header-center
-        Status
-      .post-header-right
-        = f.submit 'Post'
-    .post_user
-      .post_user_image
-        = image_tag current_user.avatar_image
-      .post_user_name
-        = @article.user.account
-    = f.text_field :content, class: 'post_field', placeholder: "What's on your mind?"
-    .image_push
-      .image-push-btn
-        = f.label :images, '+ Album'
-      .image-push-field
-        = f.file_field :images, multiple: true
+    .article
+      .article_header
+        .article_header_new
+          .article-header-left
+            = link_to :back do
+              Cancel
+          .article-header-center
+            Status
+          .article-header-right
+            = f.submit 'Post', class: 'btn_article_post'
+      .post_user
+        .post_user_image
+          = image_tag current_user.avatar_image
+        .post_user_name
+          = @article.user.account
+      = f.text_field :content, class: 'post_field', placeholder: "What's on your mind?"
+      .image_push
+        .image_push_btn
+          = f.label :images, '+ Album'
+          .image_push_field
+            = f.file_field :images, multiple: true

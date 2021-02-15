@@ -1,0 +1,38 @@
+#article-show{data: {article_id: article.id}}
+  .article_user
+    .article_user_icon
+      = image_tag article.user.avatar_image
+    .article_user_info
+      .article_user_info_name
+        = article.user.account
+      .article_user_info_created_at
+        = article.created_at
+  .article_images_scope
+    - if article.images.attached?
+      - case article.images.count
+        - when 1
+          = image_tag article.images.first, class: 'image_size_one'
+        - when 2
+          .image_size
+            .image_size_left
+              = image_tag article.images.first, class: 'image_size_half'
+            .image_size_right
+              = image_tag article.images.second, class: 'image_size_half'
+        - when 3
+          .image_size
+            .image_size_left
+              = image_tag article.images.first, class: 'image_size_half'
+            .image_size_right
+              = image_tag article.images.second, class: 'image_size_quarter'
+              = image_tag article.images.third, class: 'image_size_quarter'
+        - when 4
+          .image_size
+            .image_size_left
+              = image_tag article.images.first, class: 'image_size_quarter'
+              = image_tag article.images.second, class: 'image_size_quarter'
+            .image_size_left
+              = image_tag article.images.third, class: 'image_size_quarter'
+              = image_tag article.images.fourth, class: 'image_size_quarter'
+        - else
+          - article.image.each do |image|
+            = image_tag image, class: 'image_size_else'
