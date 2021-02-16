@@ -1,0 +1,14 @@
+.container
+  .follow_page_title
+    %p Followings
+  .follow
+    - follows.each do |follow|
+      .follow_member
+        .follow_member_image
+          = image_tag follow.avatar_image
+        .follow_member_info
+          .follow_member_info_name
+            = link_to account_path(follow.id) do
+              = follow.account
+          .follow_member_info_time
+            = 'Last seen 3 hours ago'

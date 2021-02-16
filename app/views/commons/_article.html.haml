@@ -1,12 +1,4 @@
 #article-show{data: {article_id: article.id}}
-  .article_user
-    .article_user_icon
-      = image_tag article.user.avatar_image
-    .article_user_info
-      .article_user_info_name
-        = article.user.account
-      .article_user_info_created_at
-        = article.created_at
   .article_images_scope
     - if article.images.attached?
       - case article.images.count

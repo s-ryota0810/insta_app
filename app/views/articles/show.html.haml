@@ -1,21 +1,30 @@
 = render 'articles/header'
 .container
   .article_container_field
+    .article_user
+      .article_user_icon
+        = link_to account_path(@article.user.id) do
+          = image_tag @article.user.avatar_image
+      .article_user_info
+        .article_user_info_name
+          = @article.user.account
+        .article_user_info_created_at
+          = @article.created_at
     = render 'commons/article', article: @article
-    .article_option
-      .icon_content
-        .icon_heart
-          - if user_signed_in?
+    - if user_signed_in?
+      .article_option
+        .icon_content
+          .icon_heart
             .active-heart-logo.hidden
               = image_tag 'liked.png'
             .inactive-heart-logo.hidden
               = image_tag 'non-liked.png'
             .article-heart-count
               %span
-      .icon_content_else
-        = image_tag 'btn-share.png'
-      .icon_content_else.comment_btn
-        = image_tag 'btn-comments.png'
+        .icon_content_else
+          = image_tag 'btn-share.png'
+        .icon_content_else.comment_btn
+          = image_tag 'btn-comments.png'
     .article_content
       = @article.content
 

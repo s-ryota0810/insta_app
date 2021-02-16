@@ -4,11 +4,10 @@ import { csrfToken } from 'rails-ujs'
 
 axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 
-document.addEventListener('DOMContentLoaded', () => {
-  
-  const accountDataset = $('#account-show').data()
-  const accountId = accountDataset.accountId
+const accountDataset = $('#account-show').data()
+const accountId = accountDataset.accountId
 
+document.addEventListener('DOMContentLoaded', () => {
   axios.get(`/accounts/${accountId}/follows`)
       .then((res) => {
         const followed = res.data.followStatus
