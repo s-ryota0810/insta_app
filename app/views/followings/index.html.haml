@@ -1,16 +1,1 @@
-.container
-  .page_title
-    %p Followings
-  .followings
-    - @followings.each do |following|
-      .followings_member
-        .followings_member_image
-          = image_tag following.avatar_image
-        .followings_member_info
-          .followings_member_info_name
-            = link_to account_path(following.id) do
-              = following.account
-          .followings_member_info_time
-            = 'Last seen 3 hours ago'
-    
-    
+= render 'commons/follow', follows: @followings

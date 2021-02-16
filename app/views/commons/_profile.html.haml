@@ -2,7 +2,7 @@
   .profile_info
     .profile_info_name
       = user.account
-    #profile_image
+    .profile_image#profile_image
       -if user.id === current_user.id
         = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
           = image_tag user.avatar_image, class: 'profile_info_image'
@@ -16,20 +16,22 @@
             %p.follow-btn.hidden Follow
   .user_info_counts
     .element_counts
-      = user.articles.count
+      = link_to account_articles_path(user.id) do
+        = user.articles.count
       %p Posts
     .element_counts
-      = user.followers.count
       = link_to account_followers_path(user.id) do
-        %p Followers
+        = user.followers.count
+      %p Followers
     .element_counts
-      = user.followings.count
       = link_to account_followings_path(user.id) do
-        %p Follwing
+        = user.followings.count
+      %p Follwing
   .image_layouts
     .image_layouts_upper
-      #sample_1
-        = image_tag 'sample_1.png', class: 'image_layouts_upper_right'
+      .image_layouts_upper_right
+        #sample_1
+          = image_tag 'sample_1.png'
       .image_layouts_upper_left
         #sample_2
         = image_tag 'sample_2.png'
@@ -44,5 +46,3 @@
       .image_layouts_bottom_left
         #sample_6
         = image_tag 'sample_6.png'
-        
-= javascript_pack_tag 'follow'

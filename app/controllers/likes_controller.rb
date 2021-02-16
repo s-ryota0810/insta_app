@@ -4,10 +4,12 @@ class LikesController < ApplicationController
   
   def show
     article = Article.find_by(id: params[:article_id])
-    like_status = article.likes.find_by(user_id: current_user.id).present?
-    render json: { hasLiked: like_status, likeCount: like_counts }
-    
-    
+    if user_signed_in?
+      like_status = article.likes.find_by(user_id: current_user.id).present?
+      render json: { hasLiked: like_status, likeCount: like_counts }
+    else
+      render 'articles/show'
+    end
   end
   
   
