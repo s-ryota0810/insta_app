@@ -28,7 +28,7 @@ gem 'devise'
 gem 'hamlit'
 gem 'active_model_serializers'
 gem 'aws-sdk-s3', require: false
-gem 'unicorn', '5.4.1'
+gem 'unicorn'
 
 
 # Use Active Storage variant
