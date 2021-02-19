@@ -29,6 +29,7 @@ gem 'hamlit'
 gem 'active_model_serializers'
 gem 'aws-sdk-s3', require: false
 gem 'unicorn'
+gem 'dotenv-rails'
 
 
 # Use Active Storage variant
@@ -42,7 +43,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-byebug'
   gem 'rubocop-rails'
-  gem 'dotenv-rails'
   gem 'faker'
 end
 
